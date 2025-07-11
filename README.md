@@ -6,7 +6,7 @@ This project simulates selected MITRE ATT&CK techniques inside Docker containers
 
 ## Features
 
-- Simulate common MITRE ATT&CK techniques (e.g., Credential Dumping - T1003)
+- Simulate common MITRE ATT&CK techniques (e.g., Credential Dumping - T1003, Persistence via Cron - T1053.003)
 - Use Docker containers for safe, repeatable testing
 - Basic log-based detection of attack techniques
 - Cross-platform: Run on Windows 11 with WSL & Docker
@@ -37,23 +37,45 @@ This project simulates selected MITRE ATT&CK techniques inside Docker containers
     pip install -r requirements.txt
     ```
 
-3. **Start Docker containers:**
+3. **Create the logs directory (if it doesn't exist):**
+
+    ```bash
+    mkdir -p logs
+    ```
+
+4. **Start Docker containers:**
 
     ```bash
     docker-compose up -d
     ```
 
-4. **Simulate an attack:**
+5. **Simulate an attack:**
 
-    ```bash
-    python simulators/simulate_credential_dumping.py
-    ```
+    - Credential Dumping (T1003):
 
-5. **Detect the attack:**
+        ```bash
+        python3 simulators/simulate_credential_dumping.py
+        ```
 
-    ```bash
-    python detectors/parse_sysmon_logs.py
-    ```
+    - Persistence via Cron (T1053.003):
+
+        ```bash
+        python3 simulators/simulate_cron_persistence.py
+        ```
+
+6. **Detect the attack:**
+
+    - Credential Dumping:
+
+        ```bash
+        python3 detectors/parse_sysmon_logs.py
+        ```
+
+    - Persistence via Cron:
+
+        ```bash
+        python3 detectors/parse_cron_logs.py
+        ```
 
 ---
 
@@ -64,9 +86,11 @@ mitre-attack-simulator-lab/
 │
 ├── docker-compose.yml
 ├── simulators/
-│   └── simulate_credential_dumping.py
+│   ├── simulate_credential_dumping.py
+│   └── simulate_cron_persistence.py
 ├── detectors/
-│   └── parse_sysmon_logs.py
+│   ├── parse_sysmon_logs.py
+│   └── parse_cron_logs.py
 ├── logs/
 ├── README.md
 └── requirements.txt
@@ -76,10 +100,23 @@ mitre-attack-simulator-lab/
 
 ## MITRE ATT&CK Techniques Covered
 
-- T1003: Credential Dumping (demo)
+- **T1003: Credential Dumping**
+    - Simulates creation of logs indicating credential dumping activity.
+    - Detection via log parsing for related keywords.
+
+- **T1053.003: Persistence via Cron**
+    - Simulates creation of a malicious cron job.
+    - Detection via log parsing for evidence of cron job persistence.
 
 ---
 
 ## Contributing
 
-Pull requests welcome!
+Pull requests welcome! Please open an issue first to discuss major changes or new features.
+
+---
+
+## References
+
+- [MITRE ATT&CK® Framework](https://attack.mitre.org/)
+- [Docker Documentation](https://docs.docker.com/)

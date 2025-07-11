@@ -1,0 +1,2 @@
+Simulating adding the following cron job:
+* * * * * /usr/bin/evil_script.sh # ATTACK_T1053.003
