@@ -9,4 +9,4 @@ def parse_sysmon_logs(log_path):
         print("Log file not found.")
 
 if __name__ == "__main__":
-    parse_sysmon_logs('/logs/credential_dumping.log')
+    parse_sysmon_logs('logs/credential_dumping.log')
