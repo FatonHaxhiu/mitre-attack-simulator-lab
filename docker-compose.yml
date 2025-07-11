@@ -1,0 +1,10 @@
+version: '3'
+services:
+  windows-sim:
+    image: mcr.microsoft.com/windows/nanoserver:1809
+    command: ["ping", "-t", "localhost"]
+    platform: windows
+    # For demonstration; real attack simulation would require more setup.
+  ubuntu-sim:
+    image: ubuntu
+    command: ["tail", "-f", "/dev/null"]
