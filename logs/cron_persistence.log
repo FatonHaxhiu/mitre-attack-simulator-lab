@@ -1,2 +1,2 @@
 Simulating adding the following cron job:
-* * * * * /usr/bin/evil_script.sh # ATTACK_T1053.003
+* * * * * /usr/bin/echo 'Hello from ATT&CK T1053.003' # ATTACK_T1053.003
