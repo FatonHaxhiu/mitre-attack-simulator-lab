@@ -1,0 +1,32 @@
+name: MITRE ATT&CK Lab CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Lint Python files
+        run: |
+          pip install flake8
+          flake8 simulators/ detectors/ lab_manager.py
+      - name: Run basic tests
+        run: |
+          python3 simulators/simulate_credential_dumping.py
+          python3 detectors/parse_sysmon_logs.py
+          python3 simulators/simulate_cron_persistence.py
+          python3 detectors/parse_cron_logs.py
+          python3 simulators/simulate_account_discovery.py
+          python3 detectors/parse_account_discovery_logs.py
