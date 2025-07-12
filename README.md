@@ -6,8 +6,10 @@ This project simulates selected MITRE ATT&CK techniques inside Docker containers
 
 ## Features
 
-- Simulate common MITRE ATT&CK techniques (e.g., Credential Dumping - T1003, Persistence via Cron - T1053.003)
+- Simulate common MITRE ATT&CK techniques (Credential Dumping - T1003, Persistence via Cron - T1053.003, Account Discovery - T1087.001)
 - Use Docker containers for safe, repeatable testing
+- Realistic simulation: scripts now perform benign real-world actions (e.g., reading `/etc/passwd`, creating cron jobs)
+- Interactive CLI menu for attack simulation and detection
 - Basic log-based detection of attack techniques
 - Cross-platform: Run on Windows 11 with WSL & Docker
 
@@ -49,33 +51,13 @@ This project simulates selected MITRE ATT&CK techniques inside Docker containers
     docker-compose up -d
     ```
 
-5. **Simulate an attack:**
+5. **Run the interactive CLI menu:**
 
-    - Credential Dumping (T1003):
+    ```bash
+    python3 lab_manager.py
+    ```
 
-        ```bash
-        python3 simulators/simulate_credential_dumping.py
-        ```
-
-    - Persistence via Cron (T1053.003):
-
-        ```bash
-        python3 simulators/simulate_cron_persistence.py
-        ```
-
-6. **Detect the attack:**
-
-    - Credential Dumping:
-
-        ```bash
-        python3 detectors/parse_sysmon_logs.py
-        ```
-
-    - Persistence via Cron:
-
-        ```bash
-        python3 detectors/parse_cron_logs.py
-        ```
+    Follow the prompts to simulate and detect different MITRE ATT&CK techniques.
 
 ---
 
@@ -87,10 +69,13 @@ mitre-attack-simulator-lab/
 ├── docker-compose.yml
 ├── simulators/
 │   ├── simulate_credential_dumping.py
-│   └── simulate_cron_persistence.py
+│   ├── simulate_cron_persistence.py
+│   └── simulate_account_discovery.py
 ├── detectors/
 │   ├── parse_sysmon_logs.py
-│   └── parse_cron_logs.py
+│   ├── parse_cron_logs.py
+│   └── parse_account_discovery_logs.py
+├── lab_manager.py
 ├── logs/
 ├── README.md
 └── requirements.txt
@@ -100,13 +85,38 @@ mitre-attack-simulator-lab/
 
 ## MITRE ATT&CK Techniques Covered
 
+| Tactic        | Technique Name           | ID         | Simulated | Detected |
+|---------------|-------------------------|------------|:---------:|:--------:|
+| Credential    | Credential Dumping       | T1003      | ✅        | ✅       |
+| Persistence   | Cron Job                 | T1053.003  | ✅        | ✅       |
+| Discovery     | Account Discovery        | T1087.001  | ✅        | ✅       |
+
+### Details
+
 - **T1003: Credential Dumping**
-    - Simulates creation of logs indicating credential dumping activity.
-    - Detection via log parsing for related keywords.
+    - Simulates user account enumeration as a benign stand-in for credential dumping (`cat /etc/passwd`).
+    - Detection via log parsing for related entries.
 
 - **T1053.003: Persistence via Cron**
-    - Simulates creation of a malicious cron job.
-    - Detection via log parsing for evidence of cron job persistence.
+    - Simulates creation of a cron job (writes to log and actually adds a benign cron job).
+    - Detection via log parsing for cron job persistence evidence.
+
+- **T1087.001: Account Discovery**
+    - Simulates listing user accounts via `/etc/passwd`.
+    - Detection by searching simulation logs for evidence of enumeration.
+
+---
+
+## Usage
+
+1. **Run the CLI menu:**
+
+    ```bash
+    python3 lab_manager.py
+    ```
+
+2. **Select which technique to simulate or detect.**
+3. **View logs in the `logs/` directory for details of simulated actions.**
 
 ---
 

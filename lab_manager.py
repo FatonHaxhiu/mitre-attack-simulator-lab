@@ -6,7 +6,9 @@ def print_menu():
     print("2. Detect Credential Dumping")
     print("3. Simulate Persistence via Cron (T1053.003)")
     print("4. Detect Persistence via Cron")
-    print("5. Exit")
+    print("5. Simulate Account Discovery (T1087.001)")
+    print("6. Detect Account Discovery")
+    print("7. Exit")
 
 def main():
     while True:
@@ -21,6 +23,10 @@ def main():
         elif choice == "4":
             subprocess.run(["python3", "detectors/parse_cron_logs.py"])
         elif choice == "5":
+            subprocess.run(["python3", "simulators/simulate_account_discovery.py"])
+        elif choice == "6":
+            subprocess.run(["python3", "detectors/parse_account_discovery_logs.py"])
+        elif choice == "7":
             print("Exiting.")
             break
         else:
