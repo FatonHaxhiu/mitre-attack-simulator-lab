@@ -1,0 +1,32 @@
+Simulated process discovery (T1057).
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.3 166072 13292 ?        Ss   11:24   0:01 /sbin/init
+root           2  0.0  0.0   2776  1928 ?        Sl   11:24   0:00 /init
+root           6  0.0  0.0   2776   132 ?        Sl   11:24   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root          62  0.0  0.4  64220 18408 ?        S<s  11:24   0:00 /lib/systemd/systemd-journald
+root          90  0.0  0.1  21836  5712 ?        Ss   11:24   0:01 /lib/systemd/systemd-udevd
+systemd+     100  0.0  0.3  26200 13316 ?        Ss   11:24   0:00 /lib/systemd/systemd-resolved
+systemd+     107  0.0  0.1  89364  6408 ?        Ssl  11:24   0:00 /lib/systemd/systemd-timesyncd
+root         175  0.0  0.0   4408  2660 ?        Ss   11:24   0:00 /usr/sbin/cron -f -P
+message+     177  0.0  0.1   8588  4576 ?        Ss   11:24   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         182  0.0  0.4  30092 19332 ?        Ss   11:24   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+syslog       183  0.0  0.1 222404  5132 ?        Ssl  11:24   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         186  0.0  0.1  15332  7348 ?        Ss   11:24   0:00 /lib/systemd/systemd-logind
+root         214  0.0  0.0   3240  1092 hvc0     Ss+  11:24   0:00 /sbin/agetty -o -p -- \u --noclear --keep-baud console 115200,38400,9600 vt220
+root         224  0.0  0.0   3196  1072 tty1     Ss+  11:24   0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root         229  0.0  0.1   6780  4668 ?        Ss   11:24   0:00 /usr/sbin/apache2 -k start
+www-data     230  0.0  0.2 1932644 10636 ?       Sl   11:24   0:00 /usr/sbin/apache2 -k start
+www-data     231  0.0  0.2 1998180 10636 ?       Sl   11:24   0:00 /usr/sbin/apache2 -k start
+root         295  0.0  0.5 107156 21204 ?        Ssl  11:24   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         362  0.0  0.0   2780   208 ?        Ss   11:24   0:00 /init
+root         363  0.0  0.0   2780   212 ?        S    11:24   0:00 /init
+toni         364  0.0  0.1   6388  5520 pts/0    Ss   11:24   0:00 -bash
+root         365  0.0  0.1   7532  4992 pts/1    Ss   11:24   0:00 /bin/login -f
+toni         454  0.0  0.2  16968  9124 ?        Ss   11:25   0:00 /lib/systemd/systemd --user
+toni         456  0.0  0.1 103588  5508 ?        S    11:25   0:00 (sd-pam)
+toni         462  0.0  0.1   6236  5060 pts/1    S+   11:25   0:00 -bash
+toni         912  0.5  0.2  14868  9180 pts/0    S+   11:47   0:00 python3 lab_manager.py
+toni         941  0.0  0.0   2892   956 pts/0    S+   11:47   0:00 sh -c python3 simulators/simulate_process_discovery.py
+toni         942  0.0  0.2  14868  9376 pts/0    S+   11:47   0:00 python3 simulators/simulate_process_discovery.py
+toni         943  0.0  0.0   2892   996 pts/0    S+   11:47   0:00 /bin/sh -c ps aux
+toni         944  0.0  0.0   7484  3212 pts/0    R+   11:47   0:00 ps aux

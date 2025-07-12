@@ -1,0 +1,7 @@
+Simulated file and directory discovery (T1083).
+total 20
+drwx------ 2 root root 4096 Jul 12 11:23 snap-private-tmp
+drwx------ 3 root root 4096 Jul 12 11:23 systemd-private-0f9d3b159d94495e96f94781d7a18ee2-apache2.service-m1bBpg
+drwx------ 3 root root 4096 Jul 12 11:23 systemd-private-0f9d3b159d94495e96f94781d7a18ee2-systemd-logind.service-WzB7rX
+drwx------ 3 root root 4096 Jul 12 11:23 systemd-private-0f9d3b159d94495e96f94781d7a18ee2-systemd-resolved.service-S7XLdE
+drwx------ 3 root root 4096 Jul 12 11:23 systemd-private-0f9d3b159d94495e96f94781d7a18ee2-systemd-timesyncd.service-i7ghpy
