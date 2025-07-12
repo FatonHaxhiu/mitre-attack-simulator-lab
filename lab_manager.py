@@ -1,5 +1,6 @@
 import subprocess
 
+
 def print_menu():
     print("\nMITRE ATT&CK Lab Menu")
     print("1. Simulate Credential Dumping (T1003)")
@@ -9,6 +10,7 @@ def print_menu():
     print("5. Simulate Account Discovery (T1087.001)")
     print("6. Detect Account Discovery")
     print("7. Exit")
+
 
 def main():
     while True:
@@ -31,6 +33,7 @@ def main():
             break
         else:
             print("Invalid selection. Please try again.")
+
 
 if __name__ == "__main__":
     main()

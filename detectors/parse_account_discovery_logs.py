@@ -1,6 +1,6 @@
 def parse_account_discovery_logs(log_path):
     try:
-        with open(log_path, 'r') as f:
+        with open(log_path, "r") as f:
             content = f.read()
             if "account discovery" in content.lower() and "/etc/passwd" in content:
                 print("Potential account discovery detected! (T1087.001)")
@@ -11,5 +11,6 @@ def parse_account_discovery_logs(log_path):
     except FileNotFoundError:
         print("Log file not found.")
 
+
 if __name__ == "__main__":
-    parse_account_discovery_logs('logs/account_discovery.log')
+    parse_account_discovery_logs("logs/account_discovery.log")
