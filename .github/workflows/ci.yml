@@ -22,6 +22,11 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Check code formatting with black
+        run: |
+         pip install black
+         black --check .
+
       - name: Lint Python files
         run: |
           pip install flake8
