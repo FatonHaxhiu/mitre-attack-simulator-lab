@@ -1,6 +1,6 @@
 def detect_process_discovery():
     try:
-        with open('logs/process_discovery.log', 'r') as f:
+        with open("logs/process_discovery.log", "r") as f:
             lines = f.readlines()
             for line in lines:
                 if "Simulated process discovery" in line:
@@ -8,6 +8,7 @@ def detect_process_discovery():
                     return
     except FileNotFoundError:
         pass
+
 
 if __name__ == "__main__":
     detect_process_discovery()

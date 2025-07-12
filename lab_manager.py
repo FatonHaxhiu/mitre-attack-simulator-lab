@@ -1,10 +1,13 @@
 import os
 
+
 def run_simulator(script):
     os.system(f"python3 simulators/{script}")
 
+
 def run_detector(script):
     os.system(f"python3 detectors/{script}")
+
 
 def main_menu():
     while True:
@@ -46,6 +49,7 @@ def main_menu():
             break
         else:
             print("Invalid selection. Try again.")
+
 
 if __name__ == "__main__":
     main_menu()
