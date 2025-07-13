@@ -40,3 +40,8 @@ jobs:
           python3 detectors/parse_cron_logs.py
           python3 simulators/simulate_account_discovery.py
           python3 detectors/parse_account_discovery_logs.py
+      
+      - name: Run tests
+        run: |
+          pip install pytest
+          pytest
