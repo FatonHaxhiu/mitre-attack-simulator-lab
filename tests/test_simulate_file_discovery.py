@@ -1,6 +1,7 @@
 import os
 import simulators.simulate_file_discovery as sfd
 
+
 def test_simulate_file_discovery_creates_log(tmp_path, monkeypatch):
     # Patch the log directory to a temp path
     monkeypatch.chdir(tmp_path)

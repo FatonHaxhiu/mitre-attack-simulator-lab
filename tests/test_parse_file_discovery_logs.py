@@ -1,5 +1,6 @@
 import detectors.parse_file_discovery_logs as pfd
 
+
 def test_detect_file_discovery_detects(capfd, tmp_path, monkeypatch):
     logs_dir = tmp_path / "logs"
     logs_dir.mkdir()
