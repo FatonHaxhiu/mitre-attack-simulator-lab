@@ -1,6 +1,7 @@
 [![CI](https://github.com/FatonHaxhiu/mitre-attack-simulator-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/FatonHaxhiu/mitre-attack-simulator-lab/actions)
 [![Linting: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Tests: Pytest](https://img.shields.io/badge/Pytest-passing-brightgreen?logo=pytest)](https://docs.pytest.org/)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/github/license/FatonHaxhiu/mitre-attack-simulator-lab)](LICENSE)
 
 # MITRE ATT&CK Simulator Lab
