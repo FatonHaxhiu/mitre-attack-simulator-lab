@@ -28,6 +28,22 @@ Easily run benign simulations of common attacker behaviors and test detection sc
 - **Demo/Teaching:** Demonstrate how specific Linux-based attack techniques work and how to spot them.
 - **CI/CD Security:** Ensure detection scripts and simulations remain functional as the project grows.
 
+--- 
+
+## Running with Docker
+
+You can run the MITRE ATT&CK Simulator Lab in a container without installing Python or dependencies on your machine:
+
+```bash
+# Build the Docker image
+docker build -t mitre-attack-lab .
+
+# Run the lab (interactive mode)
+docker run -it mitre-attack-lab
+```
+
+- The CLI menu will appear inside the container.
+- For advanced usage (mounting logs, custom scripts), see Docker documentation.
 ---
 
 ## Usage
