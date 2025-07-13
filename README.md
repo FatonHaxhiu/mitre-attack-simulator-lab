@@ -1,3 +1,8 @@
+[![CI](https://github.com/FatonHaxhiu/mitre-attack-simulator-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/FatonHaxhiu/mitre-attack-simulator-lab/actions)
+[![Linting: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Tests: Pytest](https://img.shields.io/badge/Pytest-passing-brightgreen?logo=pytest)](https://docs.pytest.org/)
+[![License: MIT](https://img.shields.io/github/license/FatonHaxhiu/mitre-attack-simulator-lab)](LICENSE)
+
 # MITRE ATT&CK Simulator Lab
 
 A hands-on lab for simulating and detecting MITRE ATT&CK techniques on Linux systems.  
@@ -12,6 +17,15 @@ Easily run benign simulations of common attacker behaviors and test detection sc
 - Simple command-line interface (CLI) for selecting simulations/detections
 - Modular and easy to extend with new techniques
 - Continuous integration (CI) with linting and runtime checks
+
+---
+
+## Use Cases
+
+- **Blue Team Training:** Practice detecting common attacker behaviors in a safe lab setting.
+- **Detection Engineering:** Test and refine custom detection logic for various MITRE ATT&CK techniques.
+- **Demo/Teaching:** Demonstrate how specific Linux-based attack techniques work and how to spot them.
+- **CI/CD Security:** Ensure detection scripts and simulations remain functional as the project grows.
 
 ---
 
@@ -48,35 +62,6 @@ Easily run benign simulations of common attacker behaviors and test detection sc
 The CLI menu (`lab_manager.py`) lets you:
 - Run a technique simulation (writes logs as if an attack occurred)
 - Run the detection script for that technique (parses logs and reports detection)
-
----
-
-## Project Structure
-
-```
-mitre-attack-simulator-lab/
-│
-├── simulators/
-│   ├── simulate_credential_dumping.py
-│   ├── simulate_cron_persistence.py
-│   ├── simulate_account_discovery.py
-│   ├── simulate_file_discovery.py
-│   └── simulate_process_discovery.py
-│
-├── detectors/
-│   ├── parse_sysmon_logs.py
-│   ├── parse_cron_logs.py
-│   ├── parse_account_discovery_logs.py
-│   ├── parse_file_discovery_logs.py
-│   └── parse_process_discovery_logs.py
-│
-├── lab_manager.py
-├── requirements.txt
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-└── README.md
-```
 
 ---
 
