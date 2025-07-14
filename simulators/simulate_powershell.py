@@ -2,6 +2,7 @@ import subprocess
 import shutil
 import sys
 
+
 def simulate():
     print("[*] Simulating PowerShell command execution...")
     powershell = shutil.which("powershell") or shutil.which("pwsh")
@@ -14,6 +15,7 @@ def simulate():
         print("[+] PowerShell simulation completed.")
     except Exception as e:
         print(f"[!] Simulation failed: {e}")
+
 
 if __name__ == "__main__":
     simulate()
