@@ -8,7 +8,6 @@
 # MITRE ATT&CK Simulator Lab
 
 A hands-on lab for simulating and detecting MITRE ATT&CK techniques on Linux systems.  
-A toolkit for simulating and detecting MITRE ATT&CK techniques for blue team practice and detection engineering.  
 - **Easy to run** (supports Docker and Python)
 - Includes simulation and detection scripts for multiple ATT&CK techniques.
 
@@ -21,7 +20,22 @@ A toolkit for simulating and detecting MITRE ATT&CK techniques for blue team pra
 - Simple command-line interface (CLI) for selecting simulations/detections
 - Modular and easy to extend with new techniques
 - Continuous integration (CI) with linting and runtime checks
-- Added simulation & detection for T1059.001 (PowerShell Execution).
+- Simulation & detection for T1059.001 (PowerShell Execution) included
+
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Use Cases](#use-cases)
+- [Usage](#usage)
+- [Screenshot](#screenshot)
+- [Running with Docker](#running-with-docker)
+- [Available Techniques](#available-techniques)
+- [Menu Options](#menu-options)
+- [How to Add a New Technique](#how-to-add-a-new-technique)
+- [How to Contribute](#how-to-contribute)
+- [License](#license)
 
 ---
 
@@ -31,7 +45,6 @@ A toolkit for simulating and detecting MITRE ATT&CK techniques for blue team pra
 - **Detection Engineering:** Test and refine custom detection logic for various MITRE ATT&CK techniques.
 - **Demo/Teaching:** Demonstrate how specific Linux-based attack techniques work and how to spot them.
 - **CI/CD Security:** Ensure detection scripts and simulations remain functional as the project grows.
-
 
 ---
 
@@ -47,24 +60,26 @@ A toolkit for simulating and detecting MITRE ATT&CK techniques for blue team pra
    python3 lab_manager.py
    ```
 
+---
+
 ## Screenshot
 
 ![CLI Screenshot](docs/screenshot.png)
+
 ---
+
 ## Running with Docker
 
 You can run the MITRE ATT&CK Simulator Lab in a container without installing Python or dependencies on your machine:
 
 ```bash
-# Build the Docker image
 docker build -t mitre-attack-lab .
-
-# Run the lab (interactive mode)
 docker run -it mitre-attack-lab
 ```
 
 - The CLI menu will appear inside the container.
 - For advanced usage (mounting logs, custom scripts), see Docker documentation.
+
 ---
 
 ## Available Techniques
@@ -73,9 +88,10 @@ docker run -it mitre-attack-lab
 |----|---------------------------------|-------------|----------------------------------------|---------------------------------------|
 | 1  | Credential Dumping              | T1003       | simulate_credential_dumping.py         | parse_sysmon_logs.py                  |
 | 2  | Persistence via Cron            | T1053.003   | simulate_cron_persistence.py           | parse_cron_logs.py                    |
-| 3  | Account Discovery               | T1087.001   | simulate_account_discovery.py          | parse_account_discovery_logs.py        |
+| 3  | Account Discovery               | T1087.001   | simulate_account_discovery.py          | parse_account_discovery_logs.py       |
 | 4  | File & Directory Discovery      | T1083       | simulate_file_discovery.py             | parse_file_discovery_logs.py          |
 | 5  | Process Discovery               | T1057       | simulate_process_discovery.py          | parse_process_discovery_logs.py       |
+| 6  | PowerShell Execution            | T1059.001   | simulate_powershell.py                 | detect_powershell.py                  |
 
 > **Note:** All scripts are in the `simulators/` and `detectors/` folders.
 
@@ -98,10 +114,10 @@ The CLI menu (`lab_manager.py`) lets you:
 
 ---
 
-##  How to Contribute
+## How to Contribute
 
 Pull requests are welcome!  
-Please run CI checks and follow PEP8 formatting (auto-format with [black](https://github.com/psf/black) or [autopep8](https://github.com/hhatto/autopep8)).
+Please run CI checks and follow PEP8 formatting (auto-format with [black](https://github.com/psf/black) or [autopep8](https://github.com/hhatto/autopep8)).  
 Want to add more MITRE ATT&CK techniques or improve detections?  
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines!
 
@@ -109,6 +125,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines!
 
 ## License
 
-MIT License
+MIT License – see [LICENSE](LICENSE) for details.
 
 ---
