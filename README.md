@@ -8,7 +8,9 @@
 # MITRE ATT&CK Simulator Lab
 
 A hands-on lab for simulating and detecting MITRE ATT&CK techniques on Linux systems.  
-Easily run benign simulations of common attacker behaviors and test detection scripts in a safe, educational environment.
+A toolkit for simulating and detecting MITRE ATT&CK techniques for blue team practice and detection engineering.  
+- **Easy to run** (supports Docker and Python)
+- Includes simulation and detection scripts for multiple ATT&CK techniques.
 
 ---
 
@@ -19,6 +21,7 @@ Easily run benign simulations of common attacker behaviors and test detection sc
 - Simple command-line interface (CLI) for selecting simulations/detections
 - Modular and easy to extend with new techniques
 - Continuous integration (CI) with linting and runtime checks
+- Added simulation & detection for T1059.001 (PowerShell Execution).
 
 ---
 
@@ -95,10 +98,12 @@ The CLI menu (`lab_manager.py`) lets you:
 
 ---
 
-## Contributing
+##  How to Contribute
 
 Pull requests are welcome!  
 Please run CI checks and follow PEP8 formatting (auto-format with [black](https://github.com/psf/black) or [autopep8](https://github.com/hhatto/autopep8)).
+Want to add more MITRE ATT&CK techniques or improve detections?  
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines!
 
 ---
 
