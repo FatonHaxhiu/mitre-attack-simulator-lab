@@ -1,13 +1,10 @@
 import os
 
-
 def run_simulator(script):
     os.system(f"python3 simulators/{script}")
 
-
 def run_detector(script):
     os.system(f"python3 detectors/{script}")
-
 
 def main_menu():
     while True:
@@ -22,7 +19,9 @@ def main_menu():
         print("8. Detect File and Directory Discovery")
         print("9. Simulate Process Discovery (T1057)")
         print("10. Detect Process Discovery")
-        print("11. Exit")
+        print("11. Simulate PowerShell Execution (T1059.001)")
+        print("12. Detect PowerShell Execution")
+        print("13. Exit")
         choice = input("Select an action: ")
         if choice == "1":
             run_simulator("simulate_credential_dumping.py")
@@ -45,11 +44,14 @@ def main_menu():
         elif choice == "10":
             run_detector("parse_process_discovery_logs.py")
         elif choice == "11":
+            run_simulator("simulate_powershell.py")
+        elif choice == "12":
+            run_detector("detect_powershell.py")
+        elif choice == "13":
             print("Exiting.")
             break
         else:
             print("Invalid selection. Try again.")
-
 
 if __name__ == "__main__":
     main_menu()

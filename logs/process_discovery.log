@@ -1,32 +1,32 @@
 Simulated process discovery (T1057).
 USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-root           1  2.1  0.2 165908 11348 ?        Ss   11:53   0:01 /sbin/init
-root           2  0.0  0.0   2776  1924 ?        Sl   11:53   0:00 /init
-root           6  0.0  0.0   2776   132 ?        Sl   11:53   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
-root          62  0.5  0.4  55936 17944 ?        S<s  11:53   0:00 /lib/systemd/systemd-journald
-root          86  0.4  0.1  21832  5724 ?        Ss   11:53   0:00 /lib/systemd/systemd-udevd
-systemd+      98  0.5  0.3  26200 13428 ?        Ss   11:53   0:00 /lib/systemd/systemd-resolved
-systemd+     100  0.4  0.1  89364  6504 ?        Ssl  11:53   0:00 /lib/systemd/systemd-timesyncd
-root         169  0.0  0.0   4308  2640 ?        Ss   11:53   0:00 /usr/sbin/cron -f -P
-message+     171  0.1  0.1   8592  4540 ?        Ss   11:53   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
-root         176  0.8  0.4  30092 19256 ?        Ss   11:53   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
-syslog       177  0.0  0.1 222404  5256 ?        Ssl  11:53   0:00 /usr/sbin/rsyslogd -n -iNONE
-root         183  1.2  0.1  15332  7356 ?        Ss   11:53   0:00 /lib/systemd/systemd-logind
-root         207  0.0  0.0   2780   208 ?        Ss   11:53   0:00 /init
-root         209  0.0  0.0   2780   212 ?        S    11:53   0:00 /init
-toni         212  0.4  0.1   6388  5556 pts/0    Ss   11:53   0:00 -bash
-root         214  0.0  0.0   3240  1076 hvc0     Ss+  11:53   0:00 /sbin/agetty -o -p -- \u --noclear --keep-baud console 115200,38400,9600 vt220
-root         215  0.1  0.1   7528  4888 pts/1    Ss   11:53   0:00 /bin/login -f
-root         232  0.0  0.0   3196  1092 tty1     Ss+  11:53   0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
-root         262  0.0  0.1   6788  5240 ?        Ss   11:53   0:00 /usr/sbin/apache2 -k start
-root         353  0.5  0.5 107156 21292 ?        Ssl  11:53   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
-www-data     380  0.0  0.2 1932644 10732 ?       Sl   11:53   0:00 /usr/sbin/apache2 -k start
-www-data     381  0.0  0.2 1998180 10732 ?       Sl   11:53   0:00 /usr/sbin/apache2 -k start
-toni         486  0.2  0.2  16968  9484 ?        Ss   11:53   0:00 /lib/systemd/systemd --user
-toni         487  0.0  0.0 168960  3564 ?        S    11:53   0:00 (sd-pam)
-toni         500  0.0  0.1   6236  4976 pts/1    S+   11:53   0:00 -bash
-toni         553  0.1  0.2  14868  9168 pts/0    S+   11:54   0:00 python3 lab_manager.py
-toni         586  0.0  0.0   2892   956 pts/0    S+   11:54   0:00 sh -c python3 simulators/simulate_process_discovery.py
-toni         587  0.0  0.2  14868  9464 pts/0    S+   11:54   0:00 python3 simulators/simulate_process_discovery.py
-toni         588  0.0  0.0   2892  1024 pts/0    S+   11:54   0:00 /bin/sh -c ps aux
-toni         589  0.0  0.0   7484  3216 pts/0    R+   11:54   0:00 ps aux
+root           1  0.1  0.2 165908 11348 ?        Ss   11:54   0:01 /sbin/init
+root           2  0.0  0.0   2776  1928 ?        Sl   11:54   0:00 /init
+root           6  0.0  0.0   2776   132 ?        Sl   11:54   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root          62  0.0  0.4  64136 18564 ?        S<s  11:54   0:00 /lib/systemd/systemd-journald
+root          86  0.0  0.1  21832  5724 ?        Ss   11:54   0:00 /lib/systemd/systemd-udevd
+systemd+      98  0.0  0.3  26200 13428 ?        Ss   11:54   0:00 /lib/systemd/systemd-resolved
+systemd+     100  0.0  0.1  89364  6504 ?        Ssl  11:54   0:00 /lib/systemd/systemd-timesyncd
+root         169  0.0  0.0   4408  2656 ?        Ss   11:54   0:00 /usr/sbin/cron -f -P
+message+     171  0.0  0.1   8592  4540 ?        Ss   11:54   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         176  0.0  0.4  30092 19656 ?        Ss   11:54   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+syslog       177  0.0  0.1 222404  7244 ?        Ssl  11:54   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         183  0.0  0.1  15332  7356 ?        Ss   11:54   0:00 /lib/systemd/systemd-logind
+root         207  0.0  0.0   2780   208 ?        Ss   11:54   0:00 /init
+root         209  0.0  0.0   2780   212 ?        S    11:54   0:00 /init
+toni         212  0.0  0.1   6388  5560 pts/0    Ss   11:54   0:00 -bash
+root         214  0.0  0.0   3240  1076 hvc0     Ss+  11:54   0:00 /sbin/agetty -o -p -- \u --noclear --keep-baud console 115200,38400,9600 vt220
+root         215  0.0  0.1   7528  4888 pts/1    Ss   11:54   0:00 /bin/login -f
+root         232  0.0  0.0   3196  1092 tty1     Ss+  11:54   0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root         262  0.0  0.1   6788  5240 ?        Ss   11:54   0:00 /usr/sbin/apache2 -k start
+root         353  0.0  0.5 107156 21292 ?        Ssl  11:54   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+www-data     380  0.0  0.2 1932644 10732 ?       Sl   11:54   0:00 /usr/sbin/apache2 -k start
+www-data     381  0.0  0.2 1998180 10732 ?       Sl   11:54   0:00 /usr/sbin/apache2 -k start
+toni         486  0.0  0.2  16968  9484 ?        Ss   11:54   0:00 /lib/systemd/systemd --user
+toni         487  0.0  0.0 168960  3564 ?        S    11:54   0:00 (sd-pam)
+toni         500  0.0  0.1   6236  4976 pts/1    S+   11:54   0:00 -bash
+toni         876  0.7  0.2  14868  9120 pts/0    S+   12:11   0:00 python3 lab_manager.py
+toni         905  0.0  0.0   2892  1028 pts/0    S+   12:11   0:00 sh -c python3 simulators/simulate_process_discovery.py
+toni         906  0.0  0.2  14868  9492 pts/0    S+   12:11   0:00 python3 simulators/simulate_process_discovery.py
+toni         907  0.0  0.0   2892   952 pts/0    S+   12:11   0:00 /bin/sh -c ps aux
+toni         908  0.0  0.0   7484  3208 pts/0    R+   12:11   0:00 ps aux
