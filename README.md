@@ -43,6 +43,10 @@ Easily run benign simulations of common attacker behaviors and test detection sc
    ```bash
    python3 lab_manager.py
    ```
+
+## Screenshot
+
+![CLI Screenshot](docs/screenshot.png)
 ---
 ## Running with Docker
 
