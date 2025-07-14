@@ -9,6 +9,19 @@ def run_detector(script):
     os.system(f"python3 detectors/{script}")
 
 
+def view_results_log():
+    log_path = "results_log.csv"
+    if not os.path.isfile(log_path):
+        print("No results log found yet.")
+        return
+    print("\n--- Simulation & Detection Results ---\n")
+    with open(log_path, "r") as f:
+        lines = f.readlines()
+    for line in lines:
+        print(line.strip())
+    print("\n--- End of Results ---\n")
+
+
 def main_menu():
     while True:
         print("\nMITRE ATT&CK Lab Menu")
@@ -25,6 +38,7 @@ def main_menu():
         print("11. Simulate PowerShell Execution (T1059.001)")
         print("12. Detect PowerShell Execution")
         print("13. Exit")
+        print("14. View Results Log")
         choice = input("Select an action: ")
         if choice == "1":
             run_simulator("simulate_credential_dumping.py")
@@ -53,6 +67,8 @@ def main_menu():
         elif choice == "13":
             print("Exiting.")
             break
+        elif choice == "14":
+            view_results_log()
         else:
             print("Invalid selection. Try again.")
 

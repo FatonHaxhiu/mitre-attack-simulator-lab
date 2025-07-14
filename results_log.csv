@@ -1,0 +1,3 @@
+timestamp,technique,script,action,result,details
+2025-07-14T12:24:53,T1059.001,simulate_powershell.py,simulation,failed,PowerShell not found
+2025-07-14T12:24:55,T1059.001,detect_powershell.py,detection,success,No PowerShell process detected
