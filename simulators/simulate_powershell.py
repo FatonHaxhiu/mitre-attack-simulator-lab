@@ -10,7 +10,6 @@ from results_logger import log_result
 def simulate():
     print("[*] Simulating PowerShell command execution...")
     powershell = shutil.which("powershell") or shutil.which("pwsh")
-    details = ""
     if not powershell:
         print("[!] PowerShell not found on this system. Simulation cannot proceed.")
         log_result(

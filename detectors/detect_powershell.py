@@ -9,7 +9,6 @@ from results_logger import log_result
 def detect():
     print("[*] Detecting PowerShell process...")
     found = False
-    details = ""
     for proc in psutil.process_iter(["name"]):
         if proc.info["name"] and "powershell" in proc.info["name"].lower():
             print(f"[!] Potential PowerShell process detected: {proc.info['name']}")
